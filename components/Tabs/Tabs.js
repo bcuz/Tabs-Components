@@ -1,3 +1,15 @@
+class Tabs {
+  constructor(element) {
+    // this.element = element
+    this.element = new TabLink(element)
+
+    let parent = element.parentNode
+    
+    this.selected = parent.querySelector('.tabs-link-selected')
+    
+    
+  }
+}
 
 class TabLink {
   constructor(element) {
@@ -64,4 +76,4 @@ class TabItem {
 */
 
 links = document.querySelectorAll('.tabs-link')
-.forEach(link => new TabLink(link))
+.forEach(link => new Tabs(link))
