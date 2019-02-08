@@ -2,13 +2,12 @@ class Tabs {
   constructor(element) {
     this.element = element
     this.tablink = new TabLink(this.element)
-    // console.log(this.tablink);
+    // console.log(this.element);
     
     // might need to be this.tablink
-    // let parent = this.element.parentNode
+    this.parent = this.element.parentNode
       
-    // this.current = parent.querySelector('.tabs-link-selected')
-    // console.log(this.current);  
+    this.current = this.parent.querySelector('.tabs-link-selected')
 
     // call deselect from here.
     this.element.addEventListener('click', () => this.deselect()) 
@@ -20,7 +19,7 @@ class Tabs {
     
     // element.target
     
-    // console.log(event.target);
+    // console.log(this.current);
     
     let twoSelected = parent.querySelectorAll('.tabs-link-selected')
     
@@ -64,6 +63,7 @@ class TabLink {
     
     // Call the select method on the item associated with this link
     this.tabItem.select()
+    // this.tabItem.deselect()
   }
   deselect(twoSelected) {
     
@@ -98,6 +98,10 @@ class TabItem {
     // Add a class named "tabs-item-selected" to this element
     this.element.classList.add('tabs-item-selected');
   }
+
+  // deselect() {
+
+  // }
 }
 
 /* START HERE: 
